@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVCDemo.Filters;
 using MVCDemo.Models;
 using MVCDemo.Servics;
 
@@ -18,6 +19,7 @@ namespace MVCDemo.Controllers
             return View(p);
         }
 
+        [MyLog]
         public IActionResult List()
         {
             List<Pizza> pizzas = PizzaService.GetAll();
